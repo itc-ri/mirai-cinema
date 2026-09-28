@@ -1,0 +1,13 @@
+.private/
+.git/
+00_reference/
+01_assets/
+02_movies/
+03_app/
+04_records/
+docs/
+.env*
+web/.env*
+web/.next/
+**/node_modules/
+**/*.log

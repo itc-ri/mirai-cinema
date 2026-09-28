@@ -1,3 +1,35 @@
+# Local credentials and dependencies
+.private/
+.env
+.env.*
+!.env.example
+node_modules/
+*.log
+
+/00_reference/fal_api_20260678.txt
+
+.media-tools/
+
+# Mirai Cinema website
+web/.next/
+web/out/
+web/tsconfig.tsbuildinfo
+.clasprc.json
+.clasp.json
+web/test-results/
+web/.npm-cache/
+
+# Deployment state and local video-production workspace
+.vercel/
+00_reference/
+01_assets/
+02_movies/
+03_app/
+04_records/
+.vercel
+.env*
+
+# Existing repository rules
 # ===== 環境変数・秘密情報 =====
 .env
 .env.*
