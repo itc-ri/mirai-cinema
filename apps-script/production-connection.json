@@ -1,0 +1,10 @@
+{
+  "environment": "production",
+  "catalogSpreadsheetId": "1qx3ZnBX4T7drva8A2LDLWBSBPdCwmDxAlcLJ-UFV3sU",
+  "feedbackSpreadsheetId": "1b90mdeXhKMzyYiT021Cn3_oTLYY0y3eHp3fk9EVJvS4",
+  "catalogTab": "Movies",
+  "feedbackTab": "Feedback",
+  "scriptProjectId": "1057obtNYklE8-ypgUPyvhor68gziWJSFArH1wjg_W2p33KWgcRFU-bMs",
+  "webAppUrl": "https://script.google.com/macros/s/AKfycbydwrZBTJteVCS3QBH9rLjNxRPWFZ4pDKWsQa_lUbqo8MqQJgsNyYM9nQTr2kwKL0SjPg/exec",
+  "status": "configured_catalog_verified_feedback_empty"
+}

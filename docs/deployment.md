@@ -1,5 +1,15 @@
 # 公開環境の設定
 
+GitHub: https://github.com/itc-ri/mirai-cinema （既存の公開リポジトリを使用し、元のREADME・LICENSE・資料を保持）
+
+公開サイト: https://mirai-cinema.vercel.app
+
+Vercelプロジェクト: `mochimatsus-projects-a5b61bc8/mirai-cinema`。GitHubのmainブランチと連携しています。
+
+本番接続先は `../apps-script/production-connection.json`、テスト用接続先は `../apps-script/test-connection.json` に記録。秘密キーはどちらのJSONにも含みません。
+
+2026-09-29：Vercel Previewからテスト用Feedbackシートへの保存と、同じ受付IDの再送で `already_recorded` を確認。本番のMovies読取も成功。本番Feedbackにはテスト感想を入れていません。
+
 GitHubリポジトリにはサイト実装、Apps Scriptの秘密値を含まないソース、テストと運用手順を登録します。動画制作ファイル、認証情報、環境変数ファイルは含めません。
 
 VercelのフレームワークはNext.js、Root Directoryは `web`、Install Commandは `npm ci`、Build Commandは `npm run build` です。
