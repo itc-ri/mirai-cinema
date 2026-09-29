@@ -2,7 +2,7 @@
 import {forwardRef,useEffect,useImperativeHandle,useRef,useState} from 'react';
 
 const sources:Record<string,string>={
- '1QOA3MVpYjMQCGzGpW2ble3LzRxYbHrw9':'/videos/mobility-onsen.mp4',
+ '1QOA3MVpYjMQCGzGpW2ble3LzRxYbHrw9':'/videos/mobility-onsen-web-v2.mp4',
  '1RL_hz5r5c_beKwgBrwIgOGVcG5VU2d5M':'/videos/family-robots.mp4'
 };
 export type PlayerHandle={play:()=>void};
