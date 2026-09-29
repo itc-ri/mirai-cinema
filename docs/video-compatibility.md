@@ -7,7 +7,7 @@ iPhone/iPadでは温泉編のみメタデータを読み込めず、PCでは両�
 配信コピーだけをFFmpeg 7.1のビットストリームフィルターでLevel 4.0、tick_rate=48へ修正しました。MP4内のサンプル時刻は維持し、映像・音声ともstream copyを使用しています。元の完成版とDrive原本は変更していません。キャッシュを避けるため配信ファイル名を変更しました。
 
 ```powershell
-ffmpeg -i mobility-onsen.mp4 -map 0:v:0 -map 0:a:0 -c copy -bsf:v h264_metadata=level=4.0:tick_rate=48 -movflags +faststart mobility-onsen-web-v2.mp4
+ffmpeg -i mobility-onsen.mp4 -map 0:v:0 -map 0:a:0 -c copy -bsf:v h264_metadata=level=40:tick_rate=48 -movflags +faststart mobility-onsen-web-v2.mp4
 ```
 
 検証：両ファイルを全編デコードし、映像・音声を同時に `-fps_mode passthrough -f framemd5` へ出力。時刻・サンプルサイズ・各フレーム/音声ハッシュを含む出力全体のSHA-256がともに `ca6b5731003079c184495c72e46d14c9941aff9874a2d627476b5a90db1e3176` で一致しました。映像1105フレーム、音声、タイミングを保持し、再生成・再編集・再圧縮はしていません。
