@@ -8,6 +8,7 @@ function doPost(e) {
     if(!secret || typeof body.token!=='string' || body.token!==secret) result=fail_('AUTH','認証できません。');
     else if(body.action==='getCatalog') result=getCatalog();
     else if(body.action==='submitFeedback') result=submitFeedback(body.payload);
+    else if(body.action==='recordPlay') result=recordPlay(body.payload);
     else result=fail_('VALIDATION','操作が正しくありません。');
   } catch(e) { result=fail_('UPSTREAM','処理結果を確認できません。同じ受付IDで再確認してください。'); }
   return ContentService.createTextOutput(JSON.stringify(result)).setMimeType(ContentService.MimeType.JSON);

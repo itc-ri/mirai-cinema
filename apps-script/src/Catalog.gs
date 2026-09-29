@@ -12,5 +12,7 @@ function getCatalog() {
   movies.push({id:id,sortOrder:order,category:row[h.category],problem:row[h.problem],title:row[h.title],driveFileId:row[h.drive_file_id],resourceKey:row[h.drive_resource_key]||'',thumbnailKey:row[h.thumbnail_key],durationSeconds:duration,updatedAt:row[h.updated_at] instanceof Date?row[h.updated_at].toISOString():String(row[h.updated_at]||'')});
  });
  movies.sort(function(a,b){return a.sortOrder-b.sortOrder || (a.id<b.id?-1:a.id>b.id?1:0);});
+ var counts=typeof playCounts_==='function'?playCounts_():{};
+ movies.forEach(function(movie){movie.playCount=counts[movie.id]||0;});
  return {ok:true,version:properties_().getProperty('APP_VERSION')||'0.1.0',fetchedAt:new Date().toISOString(),movies:movies};
 }

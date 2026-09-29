@@ -32,7 +32,7 @@ const fs=require('node:fs');
  // Verify lifecycle with a clearly synthetic Drive iframe; no real playback claim.
  await page.route('**/api/movies',route=>route.fulfill({contentType:'application/json',body:JSON.stringify({ok:true,mode:'sheets',movies:[{id:'test-video',category:'テスト',problem:'プレイヤー破棄テスト',title:'テスト作品',driveFileId:'synthetic-test-id',resourceKey:'',thumbnailKey:'family',durationSeconds:42}]})}));
  await page.route('https://drive.google.com/**',route=>route.fulfill({contentType:'text/html',body:'<p>Test fixture only</p>'}));
- await page.goto(base);await page.getByRole('button',{name:/プレイヤー破棄テスト/}).click();await page.getByRole('button',{name:/動画を再生/}).click();await page.locator('iframe.player').waitFor();await page.getByRole('button',{name:/感想フォームを開く/}).click();assert.equal(await page.locator('iframe.player').count(),0);results.push('leaving watch removes iframe (synthetic fixture; real audio unverified)');
+ await page.goto(base);await page.getByRole('button',{name:/プレイヤー破棄テスト/}).click();await page.locator('iframe.player').waitFor();await page.getByRole('button',{name:/感想フォームを開く/}).click();assert.equal(await page.locator('iframe.player').count(),0);results.push('leaving watch removes iframe (synthetic fixture; real audio unverified)');
  fs.writeFileSync('docs/verification/browser-results.json',JSON.stringify({browser:'Microsoft Edge / Playwright',results,realVideoVerified:false,realSheetVerified:false},null,2));
  console.log(JSON.stringify(results,null,2));await browser.close();
 })().catch(e=>{console.error(e);process.exit(1)});
